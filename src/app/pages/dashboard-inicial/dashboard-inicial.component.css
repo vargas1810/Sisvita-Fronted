@@ -1,0 +1,27 @@
+.container {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  h1 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 100px; /* Aumenta el espacio debajo del encabezado */
+  }
+  
+  button {
+    font-size: 1.2em;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 30px; /* Aumenta el espacio encima del botón */
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  

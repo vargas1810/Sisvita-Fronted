@@ -1,0 +1,28 @@
+<div class="container">
+    <h2>Mi Perfil</h2>
+    <div *ngIf="usuario">
+      <p *ngIf="usuario.nombre_usuario"><strong>Nombre de Usuario:</strong> {{ usuario.nombre_usuario }}</p>
+      <p *ngIf="usuario.email"><strong>Email:</strong> {{ usuario.email }}</p>
+      <p *ngIf="usuario.rol"><strong>Rol:</strong> {{ usuario.rol.nombre }}</p>
+      <p *ngIf="usuario.ubigeo"><strong>Ciudad:</strong> {{ usuario.ubigeo.nombre_ciudad }}</p>
+    </div>
+  
+    <h3>Resultados de los Tests</h3>
+    <div *ngIf="resultados && resultados.length > 0">
+      <ul>
+        <li *ngFor="let resultado of resultados">
+          <p><strong>Test ID:</strong> {{ resultado.tipo_test_id }}</p>
+          <p><strong>Nombre del Test:</strong> {{ resultado.nombre_tipo_test }}</p>
+          <p><strong>Condición ID:</strong> {{ resultado.condicion_id }}</p>
+          <p><strong>Condición:</strong> {{ resultado.nombre_condicion }}</p>
+        </li>
+      </ul>
+    </div>
+    <div *ngIf="resultados && resultados.length === 0">
+      <p>No hay resultados disponibles.</p>
+    </div>
+    <button (click)="goToAnterior()"> Perfil </button>
+
+    <h2>    </h2>
+  </div>
+  

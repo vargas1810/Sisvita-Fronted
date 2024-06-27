@@ -1,0 +1,22 @@
+<body>
+    <div class="container">
+        <div class="login-box">
+            <h2>Sisvita Login</h2>
+            <form action="#">
+                <div class="input-box">
+                    <input type="email" [(ngModel)]="loginObj.email" name="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <input type="password" [(ngModel)]="loginObj.password" name="password" required>
+                    <label>Password</label>
+                </div>
+                
+                <button type="button" class="btn" (click)="onLogin()">Login</button>
+
+                <button type="button" class="btn" (click)="onRegister()" style="margin-top:10px;">Registrate</button>
+            </form>
+        </div>
+      
+    </div>
+</body>

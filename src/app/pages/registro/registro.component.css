@@ -1,0 +1,72 @@
+/* Estilo para el contenedor del formulario */
+.register-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para el título del formulario */
+.register-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Estilo para las etiquetas de los inputs */
+.register-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Estilo para los grupos de formularios */
+.register-container .form-group {
+    margin-bottom: 15px;
+}
+
+/* Estilo para los inputs */
+.register-container input[type="text"],
+.register-container input[type="email"],
+.register-container input[type="password"],
+.register-container input[type="rol"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Estilo para los botones */
+.register-container .btn {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.register-container .btn-primary {
+    background-color: #007BFF;
+}
+
+.register-container .btn-primary:hover {
+    opacity: 0.9;
+}
+
+/* Estilo adicional para el botón "Volver" */
+.register-container .btn-back {
+    background-color: #f44336;
+}
+
+.register-container .btn-back:hover {
+    opacity: 0.9;
+}

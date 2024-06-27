@@ -1,0 +1,23 @@
+<div class="encuesta-container">
+  <div class="encuesta-content">
+    <!-- Selector para elegir el tipo de test -->
+    <div>
+      <label for="tipoTest">Selecciona un tipo de test:</label>
+      <select id="tipoTest" (change)="onTipoTestChange($event)">
+        <option *ngFor="let tipo of tiposTests" [value]="tipo.id">{{ tipo.nombre_tipo }}</option>
+      </select>
+    </div>
+
+    <!-- Contenedor de preguntas -->
+    <div *ngFor="let pregunta of preguntas; let i = index" class="pregunta-container">
+      <h3 class="pregunta">{{ i + 1 }}. {{ pregunta.nombre_pregunta }}</h3>
+      <div *ngFor="let respuesta of respuestas" class="respuesta-container" [ngClass]="{ 'hidden': respuesta.tipo_test_id !== pregunta.tipo_test_id }">
+        <input type="radio" name="respuesta_{{ pregunta.id }}" (click)="onSubmit(pregunta.id, respuesta.id)" id="respuesta_{{ pregunta.id }}_{{ respuesta.id }}">
+        <label for="respuesta_{{ pregunta.id }}_{{ respuesta.id }}">{{ respuesta.nombre_respuesta }}</label>
+      </div>
+    </div>
+
+    <!-- Botón para terminar el test -->
+    <button class="terminar-btn" (click)="terminarTest()">Terminar Test</button>
+  </div>
+</div>
