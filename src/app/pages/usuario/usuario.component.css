@@ -1,0 +1,65 @@
+.container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .filters {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .filters label {
+    margin-right: 10px;
+  }
+  
+  .filters select {
+    margin-right: 20px;
+    padding: 5px;
+    font-size: 16px;
+  }
+  
+  .usuarios-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: left;
+    background-color: #f9f9f9;
+  }
+  
+  .usuarios-table th, .usuarios-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+  }
+  
+  .usuarios-table th {
+    background-color: #f4f4f4;
+  }
+  
+  .color-box {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #ccc;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+  
+  @media (max-width: 768px) {
+    .filters {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .filters label, .filters select {
+      margin-bottom: 10px;
+    }
+  
+    .usuarios-table th, .usuarios-table td {
+      padding: 8px 10px;
+      font-size: 16px;
+    }
+  }
+  

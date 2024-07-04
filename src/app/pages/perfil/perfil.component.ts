@@ -14,7 +14,7 @@ import { Router } from '@angular/router';
 export class PerfilComponent implements OnInit {
   usuario: any = {};
   resultados: any[] = [];
-  baseUrl: string = 'http://localhost:5000/api'; // Cambia esto según sea necesario
+  baseUrl: string = 'https://sisvitabackend.onrender.com/api'; // Cambia esto según sea necesario
   estudianteId: number | null = null;
 
   constructor(private http: HttpClient,private router: Router) { }

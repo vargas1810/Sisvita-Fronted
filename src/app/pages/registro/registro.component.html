@@ -1,30 +1,32 @@
-<!-- register.component.html -->
 <div class="register-container">
-  <h2>Registro de Usuario</h2>
-  <form (ngSubmit)="onRegister()">
-      <div class="form-group">
-          <label for="nombre_usuario">Nombre de Usuario</label>
-          <input type="text" id="nombre_usuario" [(ngModel)]="registerObj.nombre_usuario" name="nombre_usuario" required>
-      </div>
-      <div class="form-group">
-          <label for="email">Correo Electrónico</label>
-          <input type="email" id="email" [(ngModel)]="registerObj.email" name="email" required>
-      </div>
-      <div class="form-group">
-          <label for="password">Contraseña</label>
-          <input type="password" id="password" [(ngModel)]="registerObj.password" name="password" required>
-      </div>
-      <div class="form-group">
-          <label for="rol">Rol</label>
-          <input type="text" id="rol" [(ngModel)]="registerObj.rol" name="rol" required>
-      </div>
-      <div class="form-group">
-          <label for="nombre_ciudad">Ciudad</label>
-          <select id="nombre_ciudad" [(ngModel)]="registerObj.nombre_ciudad" name="nombre_ciudad" required>
-              <option *ngFor="let ubigeo of ubigeos" [value]="ubigeo.nombre_ciudad">{{ubigeo.nombre_ciudad}}</option>
-          </select>
-      </div>
-      <button type="submit" class="btn btn-primary">Registrar</button>
-  </form>
-  <button class="btn btn-primary" (click)="backLogin()">Volver</button>
-</div>
+    <h2>Registro de Usuario</h2>
+    <form (ngSubmit)="onRegister()">
+        <div class="form-group">
+            <label for="nombre_usuario">Nombre de Usuario</label>
+            <input type="text" id="nombre_usuario" [(ngModel)]="registerObj.nombre_usuario" name="nombre_usuario" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Correo Electrónico</label>
+            <input type="email" id="email" [(ngModel)]="registerObj.email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Contraseña</label>
+            <input type="password" id="password" [(ngModel)]="registerObj.password" name="password" required>
+        </div>
+        <div class="form-group">
+            <label for="rol">Rol</label>
+            <select id="rol" [(ngModel)]="registerObj.rol" name="rol" required>
+                <option *ngFor="let role of roles" [value]="role.nombre">{{ role.nombre }}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="nombre_ciudad">Ciudad</label>
+            <select id="nombre_ciudad" [(ngModel)]="registerObj.nombre_ciudad" name="nombre_ciudad" required>
+                <option *ngFor="let ubigeo of ubigeos" [value]="ubigeo.nombre_ciudad">{{ubigeo.nombre_ciudad}}</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Registrar</button>
+    </form>
+    <button class="btn btn-primary" (click)="backLogin()">Volver</button>
+  </div>
+  

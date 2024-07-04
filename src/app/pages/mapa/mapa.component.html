@@ -1,3 +1,31 @@
 <div class="map-container">
-  <div id="map"></div>
+  <div id="map" class="map"></div>
+  <div class="controls-container">
+    <div class="color-filter">
+      <h3>Filtrar por Color</h3>
+      <label for="colorFilter">Selecciona un color:</label>
+      <select id="colorFilter">
+        <option value="all">Todos los colores</option>
+        <option value="red">Rojo</option>
+        <option value="yellow">Amarillo</option>
+        <option value="green">Verde</option>
+      </select>
+      <button (click)="applyColorFilter()">Aplicar Filtro</button>
+    </div>
+    <div class="legend">
+      <h3>Leyenda</h3>
+      <div class="legend-item">
+        <span class="legend-color" style="background-color: green;"></span>
+        <span class="legend-label">Leve</span>
+      </div>
+      <div class="legend-item">
+        <span class="legend-color" style="background-color: yellow;"></span>
+        <span class="legend-label">Moderada</span>
+      </div>
+      <div class="legend-item">
+        <span class="legend-color" style="background-color: red;"></span>
+        <span class="legend-label">Severa</span>
+      </div>
+    </div>
+  </div>
 </div>

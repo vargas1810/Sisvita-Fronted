@@ -1,62 +1,51 @@
 .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f7f7f7;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  h2, h3 {
-    color: #333;
-    text-align: center;
-  }
-  
-  p {
-    font-size: 16px;
-    color: #555;
-    margin: 5px 0;
-  }
-  
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  li {
-    background-color: #fff;
-    padding: 15px;
-    margin: 10px 0;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  strong {
-    color: #000;
-  }
-  
-  .no-results {
-    text-align: center;
-    color: #888;
-  }
-  
-  .resultado-item {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .resultado-item p {
-    margin: 5px 0;
-  }
-  
-  @media (min-width: 600px) {
-    .resultado-item {
-      flex-direction: row;
-      justify-content: space-between;
-    }
-  
-    .resultado-item p {
-      margin: 0 10px;
-    }
-  }
-  
+  background-image: url('/perfil2.jpg'); /* Ruta a tu imagen de fondo */
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 800px;
+  margin: 0 auto;
+  color: white; /* Color del texto */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
+}
+
+h2, h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.perfil p, .resultados li p {
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+.resultados ul {
+  list-style: none; /* Quitar los puntos de la lista */
+  padding: 0;
+}
+
+.resultados li {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+button {
+  display: block;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.2em;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin: 20px auto;
+  color: black; /* Color del texto */
+}
+
+button:hover {
+  background-color: #4CAF50; /* Color verde al pasar el ratón */
+  color: white;
+}

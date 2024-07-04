@@ -6,6 +6,7 @@ import { Dashboard2Component } from './pages/dashboard2/dashboard2.component';
 import { DashboardInicialComponent } from './pages/dashboard-inicial/dashboard-inicial.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
 import { MapaComponent } from './pages/mapa/mapa.component';
+import { UsuarioComponent } from './pages/usuario/usuario.component';
 
 export const routes: Routes = [
     {
@@ -16,6 +17,7 @@ export const routes: Routes = [
 
     { path: 'perfil', component: PerfilComponent },
     { path: 'mapa', component: MapaComponent },
+    { path: 'usuario', component: UsuarioComponent },
     {
         path:'login',
         component:LoginComponent

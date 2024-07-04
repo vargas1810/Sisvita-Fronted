@@ -1,0 +1,62 @@
+<div class="container">
+    <h2>Lista de Usuarios</h2>
+  
+    <!-- Filtros -->
+    <div class="filters">
+      <label for="ciudad">Ciudad:</label>
+      <select id="ciudad" [(ngModel)]="filtroCiudad" (ngModelChange)="filtrarUsuarios()">
+        <option value="">Todas</option>
+        <option *ngFor="let ciudad of ciudades" [value]="ciudad">{{ ciudad }}</option>
+      </select>
+  
+      <label for="tipoTest">Tipo de Test:</label>
+      <select id="tipoTest" [(ngModel)]="filtroTipoTest" (ngModelChange)="filtrarUsuarios()">
+        <option value="">Todos</option>
+        <option value="1">Test 1</option>
+        <option value="2">Test 2</option>
+      </select>
+  
+      <label for="condicion">Condición:</label>
+      <select id="condicion" [(ngModel)]="filtroCondicion" (ngModelChange)="filtrarUsuarios()">
+        <option value="">Todas</option>
+        <option *ngFor="let condicion of condiciones" [value]="condicion">{{ condicion }}</option>
+      </select>
+    </div>
+  
+    <table class="usuarios-table" *ngIf="usuariosFiltrados.length > 0">
+      <thead>
+        <tr>
+          <th>Nombre de Usuario</th>
+          <th>Email</th>
+          <th>Ciudad</th>
+          <th *ngIf="!filtroTipoTest || filtroTipoTest === '1'">Color Test 1</th>
+          <th *ngIf="!filtroTipoTest || filtroTipoTest === '1'">Condición Test 1</th>
+          <th *ngIf="!filtroTipoTest || filtroTipoTest === '1'">Puntaje Test 1</th>
+          <th *ngIf="!filtroTipoTest || filtroTipoTest === '2'">Color Test 2</th>
+          <th *ngIf="!filtroTipoTest || filtroTipoTest === '2'">Condición Test 2</th>
+          <th *ngIf="!filtroTipoTest || filtroTipoTest === '2'">Puntaje Test 2</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of usuariosFiltrados">
+          <td>{{ user.nombre_usuario }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.ciudad }}</td>
+          <td *ngIf="!filtroTipoTest || filtroTipoTest === '1'">
+            <span [ngStyle]="{'background-color': user.color_test_1}" class="color-box"></span>
+          </td>
+          <td *ngIf="!filtroTipoTest || filtroTipoTest === '1'">{{ user.condicion_test_1 }}</td>
+          <td *ngIf="!filtroTipoTest || filtroTipoTest === '1'">{{ user.puntaje_test_1 }}</td>
+          <td *ngIf="!filtroTipoTest || filtroTipoTest === '2'">
+            <span [ngStyle]="{'background-color': user.color_test_2}" class="color-box"></span>
+          </td>
+          <td *ngIf="!filtroTipoTest || filtroTipoTest === '2'">{{ user.condicion_test_2 }}</td>
+          <td *ngIf="!filtroTipoTest || filtroTipoTest === '2'">{{ user.puntaje_test_2 }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <div *ngIf="usuariosFiltrados.length === 0">
+      <p>No hay usuarios disponibles.</p>
+    </div>
+  </div>
+  

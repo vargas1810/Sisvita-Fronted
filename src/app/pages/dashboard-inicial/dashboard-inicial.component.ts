@@ -11,23 +11,17 @@ export class DashboardInicialComponent {
   
   goToDashboard(): void {
     this.router.navigate(['/dashboard']);
-    
   }
+
   goToPerfil(): void {
     this.router.navigate(['/perfil']);
-    
   }
 
   goToMapa(): void {
     this.router.navigate(['/mapa']);
-    
   }
+
   goToSalir(): void {
     this.router.navigate(['/login']);
-    
   }
-
-  
-  
-
 }

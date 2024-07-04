@@ -1,27 +1,33 @@
 .container {
-    text-align: center;
-    margin-top: 50px;
-  }
-  
-  h1 {
-    font-size: 2.5em;
-    color: #333;
-    margin-bottom: 100px; /* Aumenta el espacio debajo del encabezado */
-  }
-  
-  button {
-    font-size: 1.2em;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 30px; /* Aumenta el espacio encima del botón */
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  
+  background-image: url('/dashh.jpg'); /* Asegúrate de que la ruta sea correcta */
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white; /* Color del texto */
+}
+
+h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+button {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.2em;
+  margin: 10px 0;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+  background-color: #4CAF50; /* Color verde al pasar el ratón */
+  color: white;
+}

@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -20,10 +21,18 @@ export class LoginComponent {
   }
 
   onLogin() {
-    this.http.post('http://127.0.0.1:5000/api/login', this.loginObj)
+    this.http.post('https://sisvitabackend.onrender.com/api/login', this.loginObj)
       .subscribe((res: any) => {
         if (res.authenticated) {
-          alert(res.message);  // Debería mostrar "Login Exitoso"
+          // Reemplaza alert(res.message) con SweetAlert2
+          Swal.fire({
+            icon: 'success',
+            title: 'Login Exitoso',
+            text: res.message,
+            showConfirmButton: false,
+            timer: 1500
+          });
+
           console.log(res.user.rol_id);
 
           if (res.user.rol_id === 1) {
@@ -32,14 +41,35 @@ export class LoginComponent {
           } else if (res.user.rol_id === 2) {
             this.router.navigateByUrl('/dashboard2');
           } else {
-            alert('rol desconocido');
+            // Reemplaza alert('rol desconocido') con SweetAlert2
+            Swal.fire({
+              icon: 'error',
+              title: 'Error',
+              text: 'Rol desconocido',
+              showConfirmButton: false,
+              timer: 1500
+            });
           }
         } else {
-          alert(res.message);  // Debería mostrar "Credenciales Incorrectas"
+          // Reemplaza alert(res.message) con SweetAlert2
+          Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: res.message,
+            showConfirmButton: false,
+            timer: 1500
+          });
         }
       }, error => {
         console.error('Error en la solicitud:', error);
-        alert('Hubo un problema al intentar iniciar sesión.');
+        // Reemplaza alert('Hubo un problema al intentar iniciar sesión.') con SweetAlert2
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: 'Hubo un problema al intentar iniciar sesión.',
+          showConfirmButton: false,
+          timer: 1500
+        });
       });
   }
 

@@ -3,6 +3,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-dashboard',
@@ -16,7 +17,7 @@ export class DashboardComponent implements OnInit {
   preguntas: any[] = [];
   respuestas: any[] = [];
   resultados: any[] = [];
-  baseUrl: string = 'http://localhost:5000/api'; // Cambia esto según sea necesario
+  baseUrl: string = 'https://sisvitabackend.onrender.com/api'; // Cambia esto según sea necesario
   estudianteId: number | null = null;
   selectedTipoTestId: number | null = null;
 
@@ -102,13 +103,25 @@ export class DashboardComponent implements OnInit {
 
     this.getResultados(this.estudianteId).subscribe(response => {
       console.log('Resultado del test', response);
-      alert('Test terminado: ' + response.condicion);
-      // Redirigir al usuario al dashboard después de mostrar el resultado
-      this.router.navigate(['/dashboard-inicial']);
+      Swal.fire({
+        title: 'Test terminado',
+        text: `Condición: ${response.condicion}`,
+        icon: 'success',
+        confirmButtonText: 'Aceptar'
+      }).then(() => {
+        // Redirigir al usuario al dashboard después de mostrar el resultado
+        this.router.navigate(['/dashboard-inicial']);
+      });
     }, error => {
       console.error('Error al terminar el test', error);
-      alert('Error al terminar el test: ' + error.message);
-      this.router.navigate(['/dashboard-inicial']);
+      Swal.fire({
+        title: 'Error',
+        text: 'Error al terminar el test: ' + error.message,
+        icon: 'error',
+        confirmButtonText: 'Aceptar'
+      }).then(() => {
+        this.router.navigate(['/dashboard-inicial']);
+      });
     });
   }
 

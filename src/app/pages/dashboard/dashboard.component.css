@@ -1,51 +1,73 @@
 .encuesta-container {
+  background-image: url('/testtt.jpg'); /* Asegúrate de que la ruta sea correcta */
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  margin: 20px;
+  color: white; /* Color del texto */
+  overflow-y: auto; /* Agregar desplazamiento si el contenido es demasiado alto */
 }
 
 .encuesta-content {
-  width: 100%;
-  max-width: 600px;
-  background-color: #f9f9f9;
+  background-color: rgba(0, 0, 0, 0.8);
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 600px;
+  text-align: center;
+  overflow-y: auto; /* Agregar desplazamiento si el contenido es demasiado alto */
+  max-height: 80vh; /* Limitar la altura máxima para permitir el desplazamiento */
+}
+
+label, h3 {
+  font-size: 1.2em;
+}
+
+select {
+  padding: 10px;
+  font-size: 1em;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: none;
+  width: 100%; /* Ajustar el ancho al contenedor */
+  box-sizing: border-box; /* Incluir el padding en el ancho total */
 }
 
 .pregunta-container {
-  margin-bottom: 20px;
-}
-
-.pregunta {
-  font-size: 18px;
-  margin-bottom: 10px;
+  margin: 20px 0;
 }
 
 .respuesta-container {
-  margin-bottom: 10px;
+  margin: 10px 0;
+  display: flex; /* Alinear horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  justify-content: center; /* Centrar horizontalmente */
+}
+
+input[type="radio"] {
+  margin-right: 10px;
+}
+
+.terminar-btn {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.2em;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin-top: 20px;
+  width: 100%; /* Ajustar el ancho al contenedor */
+  box-sizing: border-box; /* Incluir el padding en el ancho total */
+}
+
+.terminar-btn:hover {
+  background-color: #4CAF50; /* Color verde al pasar el ratón */
+  color: white;
 }
 
 .hidden {
   display: none;
-}
-
-.terminar-btn {
-  background-color: #4caf50;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.terminar-btn:hover {
-  background-color: #45a049;
-}
-
-label {
-  margin-left: 5px;
 }
